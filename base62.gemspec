@@ -16,12 +16,12 @@ Gem::Specification.new do |s|
     s.require_path = 'lib'
     s.test_files   = Dir['test/*.rb']
 
-    s.authors = ["JT Zemp", "Saadiq Rodgers-King", "Derrick Camerino"]
+    s.authors = ["JT Zemp", "Saadiq Rodgers-King", "Derrick Camerino", "Pablo Cantero"]
     s.email   = %q{jtzemp@gmail.com}
     s.homepage = "http://github.com/jtzemp/base62"
 
     s.platform = Gem::Platform::RUBY
-    s.rubygems_version = %q{0.1.4}
+    s.rubygems_version = Base62::VERSION
     s.licenses = ["MIT"]
 end
 

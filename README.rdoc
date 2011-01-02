@@ -4,7 +4,7 @@ Base62 monkeypatches Integer to add an Integer#base62_encode instance method to 
 
 == INSTALL:
 
-* sudo gem install base62
+  $ sudo gem install base62
 
 == USAGE:
 

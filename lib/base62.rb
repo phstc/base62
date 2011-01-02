@@ -65,31 +65,27 @@ class String
     "y" => 60,
     "z" => 61
   }
-
   def base62_decode
-    i = 0
-    i_out = 0
-    self.split(//).reverse.each do |c|
+    result = 0
+    self.split(//).reverse.each_with_index do |c, i|
       place = BASE62_PRIMITIVES.size ** i
-      i_out += BASE62_PRIMITIVES[c] * place
-      i += 1
+      result += BASE62_PRIMITIVES[c] * place
     end
-    i_out
+    result
   end
 end
 
 
 class Integer
-  BASE62_PRIMITIVES = (0..9).collect { |i| i.to_s } + ('A'..'Z').to_a + ('a'..'z').to_a
-
+  BASE62_PRIMITIVES = (0..9).to_a + ('A'..'Z').to_a + ('a'..'z').to_a
   def base62_encode
-     return "0" if self == 0
-     number = self
-     result = ''
-     while(number != 0)
-        result = BASE62_PRIMITIVES[number % BASE62_PRIMITIVES.size ].to_s + result
-        number /= BASE62_PRIMITIVES.size
-     end
+    number = self
+    return '0' if number == 0
+    result = ''
+    while(number != 0)
+      result = BASE62_PRIMITIVES[number % BASE62_PRIMITIVES.size ].to_s + result
+      number /= BASE62_PRIMITIVES.size
+    end
     result
   end
 end
